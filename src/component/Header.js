@@ -8,7 +8,7 @@ class Header extends Component {
 
     render() {
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-transparent px-0">
+            <nav className="navbar navbar-expand-lg navbar-light bg-transparent px-0 mt-3">
                 <span className="navbar-brand text-gold" href="/"><b>Sosial</b>Network</span>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -23,14 +23,10 @@ class Header extends Component {
                     </form>
                 </div>
                 <div className="row d-none d-lg-block">
-                    <div className="col-6 d-flex px-0 justify-content-center">
-                        <img className="img-fluid" style={{width: "2rem"}} src="https://img.icons8.com/material/4ac144/256/user-male.png" alt=""/>
-                    </div>
-                    <div className="col-6">
-                        Nama
-                        <br/>
-                        Alamat
-                    </div>
+                    <button className="btn bg-transparent d-flex align-items-center py-0 px-3"><i
+                        className="fas fa-user h-100 d-block p-2 bg-white mr-2"/>
+                        <span style={{lineHeight: 1.2}}>ada <br/> ada</span>
+                        </button>
                 </div>
             </nav>
         );

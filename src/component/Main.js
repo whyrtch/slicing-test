@@ -8,7 +8,7 @@ import Content from "./Content";
 
 function Main() {
     return (
-        <div className="container-fluid px-lg-5 vh-100 bg-red-blood">
+        <div className="container-fluid px-lg-5 h-100 bg-red-blood">
             <div className="row flex-column no-gutters">
                 <Header/>
                 <Breadcrumb class="border-top border-bottom my-lg-4 my-3"/>
