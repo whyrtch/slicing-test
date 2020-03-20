@@ -1,22 +1,24 @@
 import React, {Component} from "react";
 
-class Breadcrumb extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-
-    render() {
-        return(
-            <nav aria-label="breadcrumb" className={this.props.class}>
-                <ol className="breadcrumb bg-transparent mb-0 px-0">
-                    <li className="breadcrumb-item"><a href="/" className="text-gold">Home</a></li>
-                    <li className="breadcrumb-item"><a href="/" className="text-gold">Library</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">Data</li>
-                </ol>
-            </nav>
-        );
-    }
+const Breadcrumb = (props) => {
+    const strPath = props.path;
+    const listPath = strPath !== undefined ? strPath.split("/") : 0;
+    return(
+        <nav aria-label="breadcrumb" className={props.class}>
+            <ol className="breadcrumb bg-transparent mb-0 px-0 text-gold">
+                {
+                    listPath.length > 1 ?
+                    listPath.map((path, index) => {
+                        if (listPath.length === index + 1) {
+                            return <li className="breadcrumb-item">{path}</li>
+                        } else {
+                            return <li className="breadcrumb-item"><a href={"/"+ path} className="text-gold">{" / " + path}</a></li>
+                        }
+                    }) : <li className="breadcrumb-item">{listPath[0]}</li>
+                }
+            </ol>
+        </nav>
+    );
 }
 
 export default Breadcrumb;
